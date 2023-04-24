@@ -47,7 +47,7 @@ I want to get a good idea of how this will look in C so that I can make some of 
 | 0x01 - 0x09   | [Database Connection Errors](./README.md#database-errors) |
 | 0x10 - 0x19 | [Game Errors](./README.md#game-errors) 
 
-##### Database Errors
+#### Database Errors
 | Error | Meaning | 
 | ----- | ------- |
 | 0x01 | Database Failed to Connect |
@@ -60,7 +60,7 @@ I want to get a good idea of how this will look in C so that I can make some of 
 | 0x08 ||
 | 0x09 ||
 
-##### Game errors
+#### Game errors
 
 ---
 ---
