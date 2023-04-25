@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include "sqlite3.h"
+#include "sqlite/sqlite3.h"
 #include "structs.c"
 
 char dbname[] = "data/userdata.db";
@@ -29,6 +29,8 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
 
 int createDatabase(){
   int user = sqlite3_open(dbname, &db);
+
+
   if(user != SQLITE_OK){
     printf("Error: 0x02");
     return 0x02;
@@ -42,8 +44,8 @@ int creatPlayer(char username[]){
   }
   sprintf(sqlbuffer, "INSERT INTO users (username) VALUES (%s)", username);
   strcpy(sql, sqlbuffer);
-  rc = sqlite3_exec(db, sql, callback, 0, &err_msg);
-
+  //rc = sqlite3_exec(db, sql, callback, 0, &err_msg);
+  printf(sql);
 }
 
 int savePlayer(){
@@ -67,7 +69,7 @@ int main() {
   int rc = sqlite3_open("test.db", &db);
 
   if (rc != SQLITE_OK) {
-    fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
+    fprintf(stdout, "Cannot open database: %s\n", sqlite3_errmsg(db));
     sqlite3_close(db);
     return 1;
   }

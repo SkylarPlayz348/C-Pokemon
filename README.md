@@ -52,8 +52,8 @@ I want to get a good idea of how this will look in C so that I can make some of 
 | ----- | ------- |
 | 0x01 | Database Failed to Connect |
 | 0x02 | Database Failed to Create |
-| 0x03 ||
-| 0x04 ||
+| 0x03 | SQL Query Failed |
+| 0x04 | Invalid SQL |
 | 0x05 ||
 | 0x06 ||
 | 0x07 ||
@@ -71,9 +71,9 @@ These will be added as I find errors for the game
 ---
 | Error | Meaning |
 | ----- | ------- |
-| 0x10 | TBD |
-| 0x12 | TBD |
-| 0x13 | TBD |
+| 0x10 | Error Creating Player |
+| 0x12 | Error Saving Player |
+| 0x13 | Error Deleting Player |
 | 0x14 | TBD |
 | 0x15 | TBD |
 | 0x16 | TBD |
