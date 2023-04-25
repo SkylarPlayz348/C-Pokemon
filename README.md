@@ -1,7 +1,10 @@
 # C Pokemon
 
 ---
-### Table of Contents
+## NOTE: THIS IS A VERY MUCH WIP
+
+---
+## Table of Contents
 - [Possible FAQ](./README.md#possible-faq)
 - [Syntax](./README.md)
     - [Console](./README.md#console)
@@ -32,8 +35,9 @@ I want to get a good idea of how this will look in C so that I can make some of 
 | 5 | Exit Battle (Ran Away) |
 | 6 | Enter PokeCenter |
 | 7 | Pokemon Healed |
-| 8 | Enter Market |
-| 9 | Enter Buying Section |
+| 8 | Exit Pokecenter |
+| 9 | Enter Market |
+| 10 | Enter Buying Section |
 | 11 | Enter Selling |
 | 12 | Exit Buying |
 | 13 | Exit Selling |
@@ -71,12 +75,12 @@ These will be added as I find errors for the game
 ---
 | Error | Meaning |
 | ----- | ------- |
-| 0x10 | Error Creating Player |
-| 0x12 | Error Saving Player |
-| 0x13 | Error Deleting Player |
-| 0x14 | TBD |
-| 0x15 | TBD |
-| 0x16 | TBD |
+| 0x0a | Error Creating Player |
+| 0x0b | Error Saving Player |
+| 0x0c | Error Deleting Player |
+| 0x0d | TBD |
+| 0x0e | TBD |
+| 0x10 | TBD |
 | 0x17 | TBD |
 | 0x18 | TBD |
 | 0x19 | TBD |

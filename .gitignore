@@ -54,3 +54,8 @@ dkms.conf
 # Editor Stuff
 .vscode
 .vs
+
+# sqlite Stuff
+
+# MacOS Stuff
+.DS_Store
