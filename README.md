@@ -1,7 +1,7 @@
 # C Pokemon
 
 ---
-## NOTE: THIS IS A VERY MUCH WIP
+### NOTE: THIS IS A VERY MUCH WIP
 
 ---
 ## Table of Contents
