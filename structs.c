@@ -17,7 +17,7 @@ struct pokemon{
     char name[200];
     int xp;
     int xpToNxtLvl;
-    char ogOwner[100]
+    char ogOwner[100];
 };
 
 struct evolve{

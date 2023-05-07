@@ -1,22 +1,27 @@
-/**********************************************************************/
-/*                                                                    */
-/* This file covers all of the logic for the Console and Sub-Consoles */
-/*                                                                    */
-/**********************************************************************/
+/******************************************************************************************/
+/*                                                                                        */
+/* This file covers all of the logic for the Console and Sub-Consoles for Mac Development */
+/*                                                                                        */
+/******************************************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <TargetConditionals.h>
 
 #ifdef __APPLE__
-    void clear(){
+    int clear(){
         system("clear");
+        return 0;
     }
-#elif __unix__
-    void clear(){
+#elif define(__unix__)
+    int clear(){
         system("clear");
+        return 0;
     }
 #elif WIN32
-    void clear() {
+    int clear() {
         system("cls");
+        return 0;
     }
 #endif
 
@@ -48,6 +53,7 @@ int pokeConsole (char command[]){
         consoleRet = 7;
     } else if (strcmp(command, "n") == 0) {
         printf("Ok come back another time\n");
+        talking = false;
         consoleRet = 8;
     } else {
         clear();
@@ -66,14 +72,11 @@ int console (char command[]){
         clear();
         printf("Would you like your pokemon healed(y/n)\n");
         consoleRet = 6;
-    } else if (strcmp(command, "help") == 0){
-        printf("\n-----Commands-----\nbattle - Enter a battle(Only works on Routes).\npokecenter - Enter the Pokecenter(Only works if your in a city).\npokemart - Enter the Pokemart(Only works in a City).\nhelp - this command.\n\n");
-        consoleRet = 1;
     } else if (strcmp(command, "exit") == 0) {
         consoleRet = 0;
     } else {
         clear();
-        printf("Enter Valid Command! Type the command help to get all available commands\n");
+        printf("Enter Valid Command!\n");
         consoleRet = 1;
     }
     return consoleRet;

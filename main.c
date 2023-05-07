@@ -3,36 +3,36 @@
 #include <string.h>
 #include <stdbool.h>
 #include <unistd.h>
-#include "console.h"
+
+#ifdef __APPLE__ 
+    #include "console-mac.h"
+#else
+    #include "console.h"
+#endif
 
 int start() {
     clear();
     while (consoleRet != 0)
     {
-        if (consoleRet == 1 || 8 || 14) {
-            printf("Enter Command: ");
-            scanf("%s", enteredCMD);
-            console(enteredCMD);
-        } else if (consoleRet == 6) {
-            inPokecenter = true;
-            while (inPokecenter) {
-                if(!talking){
-                    printf("Enter Command: ");
-                    scanf("%s", enteredCMD);
-                    pokeConsole(enteredCMD);
-                } else {
-                    wait(5);
-                    clear();
-                    inPokecenter = false;
-                    printf("You left the Pokecenter");
-                }
+        if (consoleRet == 6) {
+            while (consoleRet != 7) {
+                printf("Enter Command: ");
+                scanf("%s", enteredCMD);
+                pokeConsole(enteredCMD);
             }
+        } else if (consoleRet == 7) {
+            printf("Your Pokemon are Healed\n");
+            consoleRet = 8;
         } else if (consoleRet == 9) {
             inMarket = true;
             while (inMarket) {
 
             }
             
+        } else {
+            printf("Enter Command: ");
+            scanf("%s", enteredCMD);
+            console(enteredCMD);
         }
     }
     return 0;
