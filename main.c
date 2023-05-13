@@ -13,26 +13,23 @@
 int start() {
     clear();
     while (consoleRet != 0)
-    {
-        if (consoleRet == 6) {
-            while (consoleRet != 7) {
+    {   
+        switch (consoleRet)
+        {
+            case 6:
                 printf("Enter Command: ");
                 scanf("%s", enteredCMD);
                 pokeConsole(enteredCMD);
-            }
-        } else if (consoleRet == 7) {
-            printf("Your Pokemon are Healed\n");
-            consoleRet = 8;
-        } else if (consoleRet == 9) {
-            inMarket = true;
-            while (inMarket) {
-
-            }
-            
-        } else {
-            printf("Enter Command: ");
-            scanf("%s", enteredCMD);
-            console(enteredCMD);
+                break;
+            case 7:
+                printf("Your Pokemon are Healed\n");
+                consoleRet = 8;
+                break;
+            default:
+                printf("Enter Command: ");
+                scanf("%s", enteredCMD);
+                console(enteredCMD);
+                break;
         }
     }
     return 0;

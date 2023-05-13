@@ -28,8 +28,8 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
 }
 
 int createDatabase(){
-  int user = sqlite3_open(dbname, &db);
-  if(user != SQLITE_OK){
+  int db = sqlite3_open(dbname, &db);
+  if(db != SQLITE_OK){
     printf("Error: 0x02");
     return 0x02;
   }
