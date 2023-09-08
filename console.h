@@ -44,17 +44,29 @@ int oPN; // Opponent Pokemon Number
 // Pokecenter Sub-Console
 int pokeConsole (char command[]){
     if (strcmp(command, "y") == 0) {
-        printf("Ok just hand over your pokemon\n");
+        printf("Ok just hand over your pokemon\nYou left the PokeCenter");
         consoleRet = 7;
     } else if (strcmp(command, "n") == 0) {
         printf("Ok come back another time\n");
         consoleRet = 8;
     } else {
         clear();
-        printf("Enter Valid Command!\n");
+        printf("Enter A Valid Command!\n");
         consoleRet = 1;
     }
     return consoleRet;
+}
+
+int martConsole (char command[]){
+    if (strcmp(command, "buy") == 0){
+
+    } else if (strcmp(command, "sell") == 0){
+
+    } else if (strcmp(command, "exit") == 0){
+
+    } else {
+        printf("Enter A Valid Command!\n")
+    }
 }
 
 int console (char command[]){
@@ -73,7 +85,7 @@ int console (char command[]){
         consoleRet = 0;
     } else {
         clear();
-        printf("Enter Valid Command! Type the command help to get all available commands\n");
+        printf("Enter A Valid Command! Type the command help to get all available commands\n");
         consoleRet = 1;
     }
     return consoleRet;

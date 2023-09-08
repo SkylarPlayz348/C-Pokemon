@@ -20,3 +20,9 @@ CREATE TABLE IF NOT EXISTS inventories(
     inventoryItems ARRAY,
     inventoryItemNum ARRAY
 );
+
+CREATE TABLE IF NOT EXISTS pokemon(
+    pokemonID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    pokemonOwnerID INTEGER,
+    pokemonStats ARRAY
+)
