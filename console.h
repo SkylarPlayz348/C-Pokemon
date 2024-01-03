@@ -5,7 +5,7 @@
 /**********************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
-// Uncomment if codingon macOS
+// Uncomment if coding on macOS
 //#include <TargetConditionals.h>
 
 #ifdef __APPLE__
