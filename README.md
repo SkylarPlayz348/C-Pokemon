@@ -1,4 +1,4 @@
-# C Pokemon
+# PokeTerm
 
 ---
 ### NOTE: THIS IS A VERY MUCH WIP
