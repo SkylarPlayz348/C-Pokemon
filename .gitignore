@@ -60,3 +60,6 @@ sqlite
 
 # MacOS Stuff
 .DS_Store
+
+# Build directories
+build

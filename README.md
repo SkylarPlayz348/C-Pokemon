@@ -3,6 +3,8 @@
 ---
 ### NOTE: THIS IS A VERY MUCH WIP
 
+### Update 1(April 5th 2025): I got bored so I updated this to be a little clearer as I have better understanding of C. You can access it in the 2025 revise branch
+
 ---
 ## Table of Contents
 - [Possible FAQ](./README.md#possible-faq)
@@ -17,75 +19,62 @@
 
 ## Possible FAQ:
 ### What Is this
-This is a C version of my C ASM Pokemon project.
+This is a C version of my C ASM Pokemon project. This is based on Sun/Moon (Gen VII or 7).
+
+For now there is not all pokemon will be added as there are so many. I will bundle 150 with this.
 ### Why
 I want to get a good idea of how this will look in C so that I can make some of the other things in assembly.
 
+## Project Structure
+| File        | Purpose                                    |
+| ----------- | ------------------------------------------ |
+| `battle.*`  | All Battle Logic. Here for maintainability |
+| `console.*` | The Engine                                 |
+| `save.*`    | Save data then                             |
 ## Syntax:
----
+### WIP Rewrite
+
 ### Console
-#### Console Return Key:
-| Number | Meaning |
-| ------ | ------- |
-| 0 | Exit |
-| 1 | Normal |
-| 2 | Enter Battle |
-| 3 | Exit Battle(Won) |
-| 4 | Exit Battle (Lost) |
-| 5 | Exit Battle (Ran Away) |
-| 6 | Enter PokeCenter |
-| 7 | Pokemon Healed |
-| 8 | Exit Pokecenter |
-| 9 | Enter Market |
-| 10 | Enter Buying Section |
-| 11 | Enter Selling |
-| 12 | Exit Buying |
-| 13 | Exit Selling |
-| 14 | Exit Market |
+#### Console State Key:
+| State                         | Meaning                                 |
+| ----------------------------- | --------------------------------------- |
+| `CONSOLE_EXIT`                | Exit the program                        |
+| `CONSOLE_OK`                  | Not in Battle or in The PokeCenter/Mart |
+| `CONSOLE_BATTLE_ENTER`        | Enter Battle                            |
+| `CONSOLE_BATTLE_WON`          | Battle Won                              |
+| `CONSOLE_BATTLE_LOST`         | Battle Lost                             |
+| `CONSOLE_BATTLE_RAN`          | Ran away from wild encounter            |
+| `CONSOLE_POKECENTER_ENTER`    | Enter PokeCenter Sub-Console            |
+| `CONSOLE_POKECENTER_HEALED`   | Healing Pokemon                         |
+| `CONSOLE_POKECENTER_EXIT`     | Exit Pokecenter Sub-Console             |
+| `CONSOLE_POKEMART_ENTER`      | Enter Market Sub-Console                |
+| `CONSOLE_POKEMART_ENTER_BUY`  | Enter Buying Mode                       |
+| `CONSOLE_POKEMART_ENTER_SELL` | Enter Selling Mode                      |
+| `CONSOLE_POKEMART_EXIT_BUY`   | Exit Buying Mode                        |
+| `CONSOLE_POKEMART_EXIT_SELL`  | Exit Selling Mode                       |
+| `CONSOLE_POKEMART_EXIT`       | Exit Market Sub-Console                 |
+
+Based on this enum [console_return_t](https://github.com/SkylarPlayz348/C-Pokemon/blob/2025-Revise/console.h#L27)
 
 ##### More will come as the console evolves
 
+### ⚠️ NEED TO UPDATE SO ITS NOT JUST HEX VALUES ⚠️
+
 ### Error Key Table Of Contents
-| Numbers | Topic |
-| ------ | ------- |
-| 0x01 - 0x09   | [Database Connection Errors](./README.md#database-errors) |
-| 0x10 - 0x19 | [Game Errors](./README.md#game-errors) 
+Topic
+- [Save File Errors](./README.md#save-errors)
+- [Game Errors](./README.md#game-errors)
 
-#### Database Errors
-| Error | Meaning | 
-| ----- | ------- |
-| 0x01 | Database Failed to Connect |
-| 0x02 | Database Failed to Create |
-| 0x03 | SQL Query Failed |
-| 0x04 | Invalid SQL |
-| 0x05 ||
-| 0x06 ||
-| 0x07 ||
-| 0x08 ||
-| 0x09 ||
+### Save Errors
 
-#### Game errors
+When the save functions fail to load the
 
----
----
-### Note
-These will be added as I find errors for the game
-
----
----
+#### Save Errors Table
 | Error | Meaning |
 | ----- | ------- |
-| 0x0a | Error Creating Player |
-| 0x0b | Error Saving Player |
-| 0x0c | Error Deleting Player |
-| 0x0d | TBD |
-| 0x0e | TBD |
-| 0x10 | TBD |
-| 0x17 | TBD |
-| 0x18 | TBD |
-| 0x19 | TBD |
+|       |
 
----
+
 ## TODO
 
 - Make Logic for battles/Pokecenter/Pokemart
@@ -93,3 +82,12 @@ These will be added as I find errors for the game
 - Make Database
 - Make Database connections with sqlite3
 - Find a name for this project
+
+## Credits
+
+[Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Type#List_of_types): For type indexing
+
+[PKHeX](https://github.com/kwsch/PKHeX/blob/c666183e6c19430667cc854716cce4f0d2293504/PKHeX.Core/Saves/SAV7.cs#L198): For Pokemon save structure inspiration
+
+[PKSM](https://github.com/FlagBrew/PKSM/blob/master/external/tools/g7PersonalCreator.cpp): For Pokemon save structure inspiration
+

@@ -8,7 +8,7 @@
 int start()
 {
     clear();
-    while (consoleRet != 0)
+    while (consoleRet != CONSOLE_EXIT)
     {
         switch (consoleRet)
         {
@@ -16,11 +16,11 @@ int start()
             scanf("%s", enteredCMD);
             pokeConsole(enteredCMD);
             break;
-        case 7:
+        case CONSOLE_POKECENTER_HEALED:
             printf("Your Pokemon are Healed\n");
-            consoleRet = 8;
+            consoleRet = CONSOLE_OK;
             break;
-        default:
+        case CONSOLE_OK || CONSOLE_POKECENTER_EXIT || CONSOLE_POKEMART_EXIT:
             printf("Enter Command: ");
             scanf("%s", enteredCMD);
             console(enteredCMD);
