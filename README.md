@@ -1,8 +1,9 @@
-# C Pokemon
+# PokeTerm
 
 ---
 ### NOTE: THIS IS A VERY MUCH WIP
 
+### Update 1: I have recently been working on updating this code. You can find my very improved code in the `2025-Revised` ore click [here](https://github.com/SkylarPlayz348/C-Pokemon/tree/2025-Revise)
 ---
 ## Table of Contents
 - [Possible FAQ](./README.md#possible-faq)
